@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/*
+  Todo: move state out of component and place into redux store
+*/
+
 class Stream extends React.Component {
   constructor(props) {
     super(props);
@@ -31,7 +35,7 @@ class Stream extends React.Component {
 
   render() {
     const { tracks } = this.props;
-    console.log(this.state);
+
     return (
       <div className="stream">
         <ul className="track">
