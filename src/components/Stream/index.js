@@ -1,17 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { likeTrack } from '../../actions';
 import PropTypes from 'prop-types';
 import Stream from './Stream';
 
-class StreamContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    const { tracks } = this.props;
-    return <Stream tracks={tracks} />;
-  }
+function StreamContainer({ tracks, likeTrack }) {
+  return <Stream tracks={tracks} likeTrack={likeTrack} />;
 }
 
 function mapStateToProps(state) {
@@ -20,8 +15,13 @@ function mapStateToProps(state) {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ likeTrack }, dispatch);
+}
+
 StreamContainer.propTypes = {
-  tracks: PropTypes.array.isRequired
+  tracks: PropTypes.array.isRequired,
+  likeTrack: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps)(StreamContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(StreamContainer);

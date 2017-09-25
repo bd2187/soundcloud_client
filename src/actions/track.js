@@ -1,4 +1,11 @@
-import { TRACKS_SET } from '../constants/actionsTypes';
+import { TRACKS_SET, LIKE_TRACK } from '../constants/actionTypes';
+
+export function likeTrack(trackKey) {
+  return {
+    type: LIKE_TRACK,
+    trackKey
+  };
+}
 
 export function setTracks(tracks) {
   return {

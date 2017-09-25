@@ -1,3 +1,3 @@
-import { setTracks } from './track';
+import { setTracks, likeTrack } from './track';
 
-export { setTracks };
+export { setTracks, likeTrack };
