@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import tracks from './trackReducer';
+import tracksReducer from './trackReducer';
 
 const rootReducer = combineReducers({
-  tracks
+  tracksReducer
 });
 
 export default rootReducer;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 /*
@@ -46,8 +47,14 @@ class Stream extends React.Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    tracks: state.tracksReducer
+  };
+}
+
 Stream.propTypes = {
   tracks: PropTypes.array.isRequired
 };
 
-export default Stream;
+export default connect(mapStateToProps)(Stream);
