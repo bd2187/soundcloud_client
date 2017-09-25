@@ -17,7 +17,7 @@ class Stream extends React.Component {
 
   displayTracks(tracks = []) {
     return tracks.map((track, key) => {
-      const trackKey = `${key}_${track}`;
+      const trackKey = `${key}_${track.title}`;
       return (
         <li key={trackKey}>
           {track.title}
@@ -31,6 +31,7 @@ class Stream extends React.Component {
 
   render() {
     const { tracks } = this.props;
+    console.log(this.state);
     return (
       <div className="stream">
         <ul className="track">
